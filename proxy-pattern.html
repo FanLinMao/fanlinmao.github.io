@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -90,17 +90,19 @@
 
 
 
-<meta name="description" content="每天进步一点点，厚积薄发">
+<meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;普通对象可以通过公共接口完成自己所需完成的工作。然而，有些对象却由于某些原因无法履行自己日常的职责。例如有的对象加载时间过长，有的对象运行在其他的计算机上，或者需要拦截发送到对象的消息等。对于这些场景，我们可以引入代理模式，通过它承担客户端需要的职责，并将相应的请求转发给底层的目标对象。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;代理是的意图是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test-backend">
-<meta property="og:url" content="https://linmao.top/test-backend.html">
+<meta property="og:title" content="设计模式之代理模式（四）">
+<meta property="og:url" content="https://linmao.top/proxy-pattern.html">
 <meta property="og:site_name" content="Flemming的博客">
-<meta property="og:description" content="每天进步一点点，厚积薄发">
-<meta property="article:published_time" content="2020-06-28T04:46:08.000Z">
-<meta property="article:modified_time" content="2020-06-28T11:09:13.297Z">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;普通对象可以通过公共接口完成自己所需完成的工作。然而，有些对象却由于某些原因无法履行自己日常的职责。例如有的对象加载时间过长，有的对象运行在其他的计算机上，或者需要拦截发送到对象的消息等。对于这些场景，我们可以引入代理模式，通过它承担客户端需要的职责，并将相应的请求转发给底层的目标对象。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;代理是的意图是">
+<meta property="og:image" content="https://linmao.top/images/design-pattern/proxy1.png">
+<meta property="article:published_time" content="2020-07-27T13:52:13.000Z">
+<meta property="article:modified_time" content="2020-07-27T14:23:46.677Z">
 <meta property="article:author" content="Flemming">
-<meta property="article:tag" content="test">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://linmao.top/images/design-pattern/proxy1.png">
 
 
 
@@ -130,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://linmao.top/test-backend.html"/>
+  <link rel="canonical" href="https://linmao.top/proxy-pattern.html"/>
 
 
 
 
 
-  <title>test-backend | Flemming的博客</title>
+  <title>设计模式之代理模式（四） | Flemming的博客</title>
   
 
 
@@ -273,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linmao.top/test-backend.html">
+    <link itemprop="mainEntityOfPage" href="https://linmao.top/proxy-pattern.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Flemming">
@@ -290,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test-backend</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之代理模式（四）</h1>
         
 
         <div class="post-meta">
@@ -303,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T12:46:08+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-27T21:52:13+08:00">
+                2020-07-27
               </time>
             
 
@@ -344,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/test-backend.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/test-backend.html" itemprop="commentCount"></span>
+                <a href="/proxy-pattern.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/proxy-pattern.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -372,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1.1k
                 </span>
               
 
@@ -388,7 +390,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -409,7 +411,48 @@
       
 
       
-        
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;普通对象可以通过公共接口完成自己所需完成的工作。然而，有些对象却由于某些原因无法履行自己日常的职责。例如有的对象加载时间过长，有的对象运行在其他的计算机上，或者需要拦截发送到对象的消息等。对于这些场景，我们可以引入代理模式，通过它承担客户端需要的职责，并将相应的请求转发给底层的目标对象。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;代理是的意图是通过提供一个代理或者占位符来控制对该对象的访问。</p>
+<h2 id="代理模式的结构"><a href="#代理模式的结构" class="headerlink" title="代理模式的结构"></a>代理模式的结构</h2><p>代理模式的主要角色如下：</p>
+<ul>
+<li>抽象主题类（Subject）：通过接口或抽象类声明真实主题和代理对象实现的业务方法。</li>
+<li>真实主题类（Real Subject）：实现了抽象主题中的具体业务，是代理对象所代表的真实对象，是最终要引用的对象。</li>
+<li>代理类（Proxy）：提供了与真实主题相同的接口，其内部含有对真实主题的引用，它可以访问、控制或扩展真实主题的功能。</li>
+</ul>
+<p>其结构如下：</p>
+<p><img src="/images/design-pattern/proxy1.png" alt="代理模式结构图"></p>
+<h2 id="代理模式的实现"><a href="#代理模式的实现" class="headerlink" title="代理模式的实现"></a>代理模式的实现</h2><p>抽象主题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>真实主题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RealSubject</span> <span class="keyword">implements</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"访问真实主题方法..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> <span class="keyword">implements</span> <span class="title">Subject</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> RealSubject realSubject;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (realSubject==<span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            realSubject=<span class="keyword">new</span> RealSubject();</span><br><span class="line">        &#125;</span><br><span class="line">        preRequest();</span><br><span class="line">        realSubject.Request();</span><br><span class="line">        postRequest();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preRequest</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"访问真实主题之前的预处理。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postRequest</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"访问真实主题之后的后续处理。"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       Proxy proxy=<span class="keyword">new</span> Proxy();</span><br><span class="line">       proxy.Request();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br>    访问真实主题之前的预处理。<br>    访问真实主题方法…<br>    访问真实主题之后的后续处理。</p>
+<h2 id="常见案例及应用场景"><a href="#常见案例及应用场景" class="headerlink" title="常见案例及应用场景"></a>常见案例及应用场景</h2><p>常见案例：<br>在软件设计中，使用代理模式的例子也很多，例如，要访问的远程对象比较大（如视频或大图像等），其下载要花很多时间。还有因为安全原因需要屏蔽客户端直接访问真实对象，如某单位的内部数据库等。</p>
+<p>应用场景：</p>
+<ul>
+<li>远程代理，这种方式通常是为了隐藏目标对象存在于不同地址空间的事实，方便客户端访问。例如，用户申请某些网盘空间时，会在用户的文件系统中建立一个虚拟的硬盘，用户访问虚拟硬盘时实际访问的是网盘空间。</li>
+<li>虚拟代理，这种方式通常用于要创建的目标对象开销很大时。例如，下载一幅很大的图像需要很长时间，因某种计算比较复杂而短时间无法完成，这时可以先用小比例的虚拟代理替换真实的对象，消除用户对服务器慢的感觉。</li>
+<li>安全代理，这种方式通常用于控制不同种类客户对真实对象的访问权限。</li>
+<li>智能指引，主要用于调用目标对象时，代理附加一些额外的处理功能。例如，增加计算真实对象的引用次数的功能，这样当该对象没有被引用时，就可以自动释放它。</li>
+<li>延迟加载，指为了提高系统的性能，延迟对目标的加载。例如，Hibernate 中就存在属性的延迟加载和关联表的延时加载。</li>
+<li>想在访问一个类时做一些控制。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Java中的动态代理提供了一种增加可复用功能的机制。倘若某个对象实现了你想要的拦截的接口方法，就可以使用动态代理去包装这个对象，增加自己的逻辑或者替换被包装对象的代码。</p>
+<p>代理模式的主要优点有：</p>
+<ul>
+<li>代理模式在客户端与目标对象之间起到一个中介作用和保护目标对象的作用；</li>
+<li>代理对象可以扩展目标对象的功能；</li>
+<li>代理模式能将客户端与目标对象分离，在一定程度上降低了系统的耦合度；</li>
+</ul>
+<p>其主要缺点是：</p>
+<ul>
+<li>在客户端和目标对象之间增加一个代理对象，会造成请求处理速度变慢；</li>
+<li>增加了系统的复杂度；</li>
+</ul>
+
       
     </div>
     
@@ -419,35 +462,6 @@
 	
       <div>
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/test-backend.html">test-backend</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 Flemming 的个人博客">Flemming</a></p>
-  <p><span>发布时间:</span>2020年06月28日 - 12:46</p>
-  <p><span>最后更新:</span>2020年06月28日 - 19:09</p>
-  <p><span>原始链接:</span><a href="/test-backend.html" title="test-backend">https://linmao.top/test-backend.html</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://linmao.top/test-backend.html"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-    $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({   
-          title: "",   
-          text: '复制成功',
-          icon: "success", 
-          showConfirmButton: true
-          });
-    });
-    });  
-</script>
-
       </div>
     
 
@@ -461,7 +475,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/test/" rel="tag"># test</a>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
           
         </div>
       
@@ -489,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/welcome.html" rel="next" title="欢迎访问：写在前面">
-                <i class="fa fa-chevron-left"></i> 欢迎访问：写在前面
+              <a href="/mediator-pattern.html" rel="next" title="设计模式之调停者（中介者）模式（三）">
+                <i class="fa fa-chevron-left"></i> 设计模式之调停者（中介者）模式（三）
               </a>
             
           </div>
@@ -498,10 +512,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/test-bigdata.html" rel="prev" title="test-bigdata">
-                test-bigdata <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -675,6 +694,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代理模式的结构"><span class="nav-number">1.</span> <span class="nav-text">代理模式的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代理模式的实现"><span class="nav-number">2.</span> <span class="nav-text">代理模式的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见案例及应用场景"><span class="nav-number">3.</span> <span class="nav-text">常见案例及应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
