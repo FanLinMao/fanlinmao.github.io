@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="当我们在创建对象时，有时会指定具体的类去实例化一个对象。可以使用工厂方法模式来定义一个外部方法以决定实例化哪个类。但有时候，控制实例化哪个类的因素可能与很多类息息相关。 抽象工厂模式的意图是允许创建一组相关或相互依赖对象的接口，且访问类无须指定所要产品的具体类就能得到同族的不同等级的产品的模式结构。 前面介绍的工厂方法模式中考虑的是一类产品的生产，而抽象工厂模式将考虑多等级产品的生产。换句话说就是">
+<meta name="description" content="模板方法模式的意图是在一个方法里实现一个算法，并推迟定义算法中的某些步骤，从而让其他类重新定义它们。 模板方法模式的结构模板方法模式包含以下主要角色。 (1) 抽象类（Abstract Class）：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之抽象工厂模式（十三）">
-<meta property="og:url" content="https://linmao.top/abstractFactory-pattern.html">
+<meta property="og:title" content="设计模式之模板方法模式（十六）">
+<meta property="og:url" content="https://linmao.top/template-method-pattern.html">
 <meta property="og:site_name" content="Flemming的博客">
-<meta property="og:description" content="当我们在创建对象时，有时会指定具体的类去实例化一个对象。可以使用工厂方法模式来定义一个外部方法以决定实例化哪个类。但有时候，控制实例化哪个类的因素可能与很多类息息相关。 抽象工厂模式的意图是允许创建一组相关或相互依赖对象的接口，且访问类无须指定所要产品的具体类就能得到同族的不同等级的产品的模式结构。 前面介绍的工厂方法模式中考虑的是一类产品的生产，而抽象工厂模式将考虑多等级产品的生产。换句话说就是">
-<meta property="og:image" content="https://linmao.top/images/design-pattern/abstractFactory1.png">
-<meta property="article:published_time" content="2020-08-10T12:58:04.000Z">
-<meta property="article:modified_time" content="2020-08-10T14:00:11.852Z">
+<meta property="og:description" content="模板方法模式的意图是在一个方法里实现一个算法，并推迟定义算法中的某些步骤，从而让其他类重新定义它们。 模板方法模式的结构模板方法模式包含以下主要角色。 (1) 抽象类（Abstract Class）：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以">
+<meta property="og:image" content="https://linmao.top/images/design-pattern/templateMethod1.png">
+<meta property="article:published_time" content="2020-08-16T13:44:08.000Z">
+<meta property="article:modified_time" content="2020-09-07T15:09:45.393Z">
 <meta property="article:author" content="Flemming">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://linmao.top/images/design-pattern/abstractFactory1.png">
+<meta name="twitter:image" content="https://linmao.top/images/design-pattern/templateMethod1.png">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://linmao.top/abstractFactory-pattern.html"/>
+  <link rel="canonical" href="https://linmao.top/template-method-pattern.html"/>
 
 
 
 
 
-  <title>设计模式之抽象工厂模式（十三） | Flemming的博客</title>
+  <title>设计模式之模板方法模式（十六） | Flemming的博客</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linmao.top/abstractFactory-pattern.html">
+    <link itemprop="mainEntityOfPage" href="https://linmao.top/template-method-pattern.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Flemming">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式之抽象工厂模式（十三）</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之模板方法模式（十六）</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-10T20:58:04+08:00">
-                2020-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-16T21:44:08+08:00">
+                2020-08-16
               </time>
             
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/abstractFactory-pattern.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/abstractFactory-pattern.html" itemprop="commentCount"></span>
+                <a href="/template-method-pattern.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/template-method-pattern.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  873
+                  1k
                 </span>
               
 
@@ -411,36 +411,45 @@
       
 
       
-        <p>当我们在创建对象时，有时会指定具体的类去实例化一个对象。可以使用工厂方法模式来定义一个外部方法以决定实例化哪个类。但有时候，控制实例化哪个类的因素可能与很多类息息相关。</p>
-<p><b>抽象工厂模式的意图是允许创建一组相关或相互依赖对象的接口，且访问类无须指定所要产品的具体类就能得到同族的不同等级的产品的模式结构。</b></p>
-<p>前面介绍的<a href="https://linmao.top/factoryMethod-pattern.html">工厂方法模式</a>中考虑的是一类产品的生产，而抽象工厂模式将考虑多等级产品的生产。换句话说就是，抽象工厂模式是工厂方法模式的升级版本，工厂方法模式只生产一个等级的产品，而抽象工厂模式可生产多个等级的产品。</p>
-<h2 id="抽象工厂模式的结构"><a href="#抽象工厂模式的结构" class="headerlink" title="抽象工厂模式的结构"></a>抽象工厂模式的结构</h2><p>抽象工厂模式的主要角色如下。</p>
+        <p>模板方法模式的意图是在一个方法里实现一个算法，并推迟定义算法中的某些步骤，从而让其他类重新定义它们。</p>
+<h2 id="模板方法模式的结构"><a href="#模板方法模式的结构" class="headerlink" title="模板方法模式的结构"></a>模板方法模式的结构</h2><p>模板方法模式包含以下主要角色。</p>
+<p>(1) 抽象类（Abstract Class）：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。</p>
+<p>① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。</p>
+<p>② 基本方法：是整个算法中的一个步骤，包含以下几种类型。</p>
 <ul>
-<li>抽象工厂（Abstract Factory）：提供了创建产品的接口，它包含多个创建产品的方法 newProduct()，可以创建多个不同等级的产品。</li>
-<li>具体工厂（Concrete Factory）：主要是实现抽象工厂中的多个抽象方法，完成具体产品的创建。</li>
-<li>抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能，抽象工厂模式有多个抽象产品。</li>
-<li>具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它 同具体工厂之间是多对一的关系。</li>
+<li>抽象方法：在抽象类中申明，由具体子类实现。</li>
+<li>具体方法：在抽象类中已经实现，在具体子类中可以继承或重写它。</li>
+<li>钩子方法：在抽象类中已经实现，包括用于判断的逻辑方法和需要子类重写的空方法两种。</li>
 </ul>
-<p>其结构图如下图所示：<br><img src="/images/design-pattern/abstractFactory1.png" alt="抽象工厂模式结构图"></p>
-<h2 id="抽象工厂模式的实现"><a href="#抽象工厂模式的实现" class="headerlink" title="抽象工厂模式的实现"></a>抽象工厂模式的实现</h2><p>抽象工厂模式的结构同工厂方法模式的结构相似，不同的是其产品的种类不止一个，所以创建产品的方法也不止一个。以下给出抽象工厂和具体工厂的代码。</p>
-<p>抽象工厂：提供了产品的生成方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AbstractFactory</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Product1 <span class="title">newProduct1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Product2 <span class="title">newProduct2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体工厂：实现了产品的生成方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteFactory1</span> <span class="keyword">implements</span> <span class="title">AbstractFactory</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Product1 <span class="title">newProduct1</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"具体工厂 1 生成--&gt;具体产品 11..."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProduct11();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Product2 <span class="title">newProduct2</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"具体工厂 1 生成--&gt;具体产品 21..."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteProduct21();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="常见案例及应用场景"><a href="#常见案例及应用场景" class="headerlink" title="常见案例及应用场景"></a>常见案例及应用场景</h2><p>常见案例：Java AWT组件中的GUI工具。<br>应用场景：</p>
-<ul>
-<li>当需要创建的对象是一系列相互关联或相互依赖的产品族时，如电器工厂中的电视机、洗衣机、空调等。</li>
-<li>系统中有多个产品族，但每次只使用其中的某一族产品。如有人只喜欢穿某一个品牌的衣服和鞋。</li>
-<li>系统中提供了产品的类库，且所有产品的接口相同，客户端不依赖产品实例的创建细节和内部结构。</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>抽象工厂模式除了具有工厂方法模式的优点外，其他主要优点如下：</p>
-<ul>
-<li>可以在类的内部对产品族中相关联的多等级产品共同管理，而不必专门引入多个新的类来进行管理。</li>
-<li>当增加一个新的产品族时不需要修改原代码，满足开闭原则。</li>
-</ul>
-<p>其缺点是：当产品族中需要增加一个新的产品时，所有的工厂类都需要进行修改。</p>
+<p>(2) 具体子类（Concrete Class）：实现抽象类中所定义的抽象方法和钩子方法，它们是一个顶级逻辑的一个组成步骤。</p>
+<p><img src="/images/design-pattern/templateMethod1.png" alt="模板方法模式结构图"></p>
+<h2 id="模板方法模式的实现"><a href="#模板方法模式的实现" class="headerlink" title="模板方法模式的实现"></a>模板方法模式的实现</h2><p>模板方法模式的代码如下：</p>
+<p>抽象类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TemplateMethod</span><span class="params">()</span> <span class="comment">//模板方法</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        SpecificMethod();</span><br><span class="line">        abstractMethod1();          </span><br><span class="line">         abstractMethod2();</span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SpecificMethod</span><span class="params">()</span> <span class="comment">//具体方法</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"抽象类中的具体方法被调用..."</span>);</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">abstractMethod1</span><span class="params">()</span></span>; <span class="comment">//抽象方法1</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">abstractMethod2</span><span class="params">()</span></span>; <span class="comment">//抽象方法2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体子类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteClass</span> <span class="keyword">extends</span> <span class="title">AbstractClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">abstractMethod1</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"抽象方法1的实现被调用..."</span>);</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">abstractMethod2</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"抽象方法2的实现被调用..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TemplateMethodPattern</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        AbstractClass tm=<span class="keyword">new</span> ConcreteClass();</span><br><span class="line">        tm.TemplateMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：<br>    抽象类中的具体方法被调用…<br>    抽象方法1的实现被调用…<br>    抽象方法2的实现被调用…</p>
+<h2 id="常见案例及应用场景"><a href="#常见案例及应用场景" class="headerlink" title="常见案例及应用场景"></a>常见案例及应用场景</h2><p>常见案例：Java 中的 Object clone() 方法。</p>
+<p>应用场景：</p>
+<ol>
+<li>算法的整体步骤很固定，但其中个别部分易变时，这时候可以使用模板方法模式，将容易变的部分抽象出来，供子类实现。</li>
+<li>当多个子类存在公共的行为时，可以将其提取出来并集中到一个公共父类中以避免代码重复。首先，要识别现有代码中的不同之处，并且将不同之处分离为新的操作。最后，用一个调用这些新的操作的模板方法来替换这些不同的代码。</li>
+<li>当需要控制子类的扩展时，模板方法只在特定点调用钩子操作，这样就只允许在这些点进行扩展。</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>模板方法模式的意图并不是要求我们在定义子类前写出模板方法。你可能会在已有的类层次关系中发现一些相似的方法。在这种情况下，你可以提取算法的框架，并将它移到超类中，从而运用模板方法来简化和组织你的代码。</p>
+<p>该模式的主要优点如下：</p>
+<ol>
+<li>它封装了不变部分，扩展可变部分。它把认为是不变部分的算法封装到父类中实现，而把可变部分算法由子类继承实现，便于子类继续扩展。</li>
+<li>它在父类中提取了公共的部分代码，便于代码复用。</li>
+<li>部分方法是由子类实现的，因此子类可以通过扩展方式增加相应的功能，符合开闭原则。</li>
+</ol>
+<p>该模式的主要缺点如下：</p>
+<ol>
+<li>对每个不同的实现都需要定义一个子类，这会导致类的个数增加，系统更加庞大，设计也更加抽象。</li>
+<li>父类中的抽象方法由子类实现，子类执行的结果会影响父类的结果，这导致一种反向的控制结构，它提高了代码阅读的难度。</li>
+</ol>
 
       
     </div>
@@ -492,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/factoryMethod-pattern.html" rel="next" title="设计模式之工厂方法模式（十二）">
-                <i class="fa fa-chevron-left"></i> 设计模式之工厂方法模式（十二）
+              <a href="/memento-pattern.html" rel="next" title="设计模式之备忘录模式（十五）">
+                <i class="fa fa-chevron-left"></i> 设计模式之备忘录模式（十五）
               </a>
             
           </div>
@@ -502,8 +511,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/prototype-pattern.html" rel="prev" title="设计模式之原型模式（十四）">
-                设计模式之原型模式（十四） <i class="fa fa-chevron-right"></i>
+              <a href="/state-pattern.html" rel="prev" title="设计模式之状态模式（十七）">
+                设计模式之状态模式（十七） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -697,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象工厂模式的结构"><span class="nav-number">1.</span> <span class="nav-text">抽象工厂模式的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象工厂模式的实现"><span class="nav-number">2.</span> <span class="nav-text">抽象工厂模式的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见案例及应用场景"><span class="nav-number">3.</span> <span class="nav-text">常见案例及应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板方法模式的结构"><span class="nav-number">1.</span> <span class="nav-text">模板方法模式的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板方法模式的实现"><span class="nav-number">2.</span> <span class="nav-text">模板方法模式的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见案例及应用场景"><span class="nav-number">3.</span> <span class="nav-text">常见案例及应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
