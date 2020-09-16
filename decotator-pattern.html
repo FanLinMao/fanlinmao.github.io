@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="有时候，你想要创建的对象已经在系统中存在。例如，当用户执行撤销操作，使系统回滚到之前的某一状态，或重新执行之前搁置的工作时，就会出现这种情形。 备忘录模式的意图是为对象状态提供存储和恢复功能。 备忘录模式的结构备忘录模式的主要角色如下。  发起人（Originator）角色：记录当前时刻的内部状态信息，提供创建备忘录和恢复备忘录数据的功能，实现其他业务功能，它可以访问备忘录里的所有信息。 备忘录（">
+<meta name="description" content="通常，我们会添加一些新类或新的方法去扩展已有的代码库。在某些情况下，我们需要对象的行为发生一些细小的变化，并且这些变化可以进行组合。这时，装饰器模式就可以满足这个需求。 装饰器模式的意图是在运行时组合操作的新变化。 装饰器模式的结构装饰模式主要包含以下角色。  抽象构件（Component）角色：定义一个抽象接口以规范准备接收附加责任的对象。 具体构件（Concrete  Component）角色">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之备忘录模式（十五）">
-<meta property="og:url" content="https://linmao.top/memento-pattern.html">
+<meta property="og:title" content="设计模式之装饰器模式（二十一）">
+<meta property="og:url" content="https://linmao.top/decotator-pattern.html">
 <meta property="og:site_name" content="Flemming的博客">
-<meta property="og:description" content="有时候，你想要创建的对象已经在系统中存在。例如，当用户执行撤销操作，使系统回滚到之前的某一状态，或重新执行之前搁置的工作时，就会出现这种情形。 备忘录模式的意图是为对象状态提供存储和恢复功能。 备忘录模式的结构备忘录模式的主要角色如下。  发起人（Originator）角色：记录当前时刻的内部状态信息，提供创建备忘录和恢复备忘录数据的功能，实现其他业务功能，它可以访问备忘录里的所有信息。 备忘录（">
-<meta property="og:image" content="https://linmao.top/images/design-pattern/memento1.png">
-<meta property="article:published_time" content="2020-08-16T13:33:55.000Z">
-<meta property="article:modified_time" content="2020-09-07T14:01:44.260Z">
+<meta property="og:description" content="通常，我们会添加一些新类或新的方法去扩展已有的代码库。在某些情况下，我们需要对象的行为发生一些细小的变化，并且这些变化可以进行组合。这时，装饰器模式就可以满足这个需求。 装饰器模式的意图是在运行时组合操作的新变化。 装饰器模式的结构装饰模式主要包含以下角色。  抽象构件（Component）角色：定义一个抽象接口以规范准备接收附加责任的对象。 具体构件（Concrete  Component）角色">
+<meta property="og:image" content="https://linmao.top/images/design-pattern/decorator1.png">
+<meta property="article:published_time" content="2020-09-16T11:50:15.000Z">
+<meta property="article:modified_time" content="2020-09-16T16:44:14.395Z">
 <meta property="article:author" content="Flemming">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://linmao.top/images/design-pattern/memento1.png">
+<meta name="twitter:image" content="https://linmao.top/images/design-pattern/decorator1.png">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://linmao.top/memento-pattern.html"/>
+  <link rel="canonical" href="https://linmao.top/decotator-pattern.html"/>
 
 
 
 
 
-  <title>设计模式之备忘录模式（十五） | Flemming的博客</title>
+  <title>设计模式之装饰器模式（二十一） | Flemming的博客</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linmao.top/memento-pattern.html">
+    <link itemprop="mainEntityOfPage" href="https://linmao.top/decotator-pattern.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Flemming">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式之备忘录模式（十五）</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之装饰器模式（二十一）</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-16T21:33:55+08:00">
-                2020-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-16T19:50:15+08:00">
+                2020-09-16
               </time>
             
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/memento-pattern.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/memento-pattern.html" itemprop="commentCount"></span>
+                <a href="/decotator-pattern.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/decotator-pattern.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  780
+                  848
                 </span>
               
 
@@ -411,39 +411,46 @@
       
 
       
-        <p>有时候，你想要创建的对象已经在系统中存在。例如，当用户执行撤销操作，使系统回滚到之前的某一状态，或重新执行之前搁置的工作时，就会出现这种情形。</p>
-<p>备忘录模式的意图是为对象状态提供存储和恢复功能。</p>
-<h2 id="备忘录模式的结构"><a href="#备忘录模式的结构" class="headerlink" title="备忘录模式的结构"></a>备忘录模式的结构</h2><p>备忘录模式的主要角色如下。</p>
+        <p>通常，我们会添加一些新类或新的方法去扩展已有的代码库。在某些情况下，我们需要对象的行为发生一些细小的变化，并且这些变化可以进行组合。这时，装饰器模式就可以满足这个需求。</p>
+<p><b>装饰器模式的意图是在运行时组合操作的新变化。</b></p>
+<h2 id="装饰器模式的结构"><a href="#装饰器模式的结构" class="headerlink" title="装饰器模式的结构"></a>装饰器模式的结构</h2><p>装饰模式主要包含以下角色。</p>
 <ol>
-<li>发起人（Originator）角色：记录当前时刻的内部状态信息，提供创建备忘录和恢复备忘录数据的功能，实现其他业务功能，它可以访问备忘录里的所有信息。</li>
-<li>备忘录（Memento）角色：负责存储发起人的内部状态，在需要的时候提供这些内部状态给发起人。</li>
-<li>管理者（Caretaker）角色：对备忘录进行管理，提供保存与获取备忘录的功能，但其不能对备忘录的内容进行访问与修改。</li>
+<li>抽象构件（Component）角色：定义一个抽象接口以规范准备接收附加责任的对象。</li>
+<li>具体构件（Concrete  Component）角色：实现抽象构件，通过装饰角色为其添加一些职责。</li>
+<li>抽象装饰（Decorator）角色：继承抽象构件，并包含具体构件的实例，可以通过其子类扩展具体构件的功能。</li>
+<li>具体装饰（ConcreteDecorator）角色：实现抽象装饰的相关方法，并给具体构件对象添加附加的责任。</li>
 </ol>
-<p>备忘录模式的结构图下图所示。</p>
-<p><img src="/images/design-pattern/memento1.png" alt="备忘录模式结构图"></p>
-<h2 id="备忘录模式的实现"><a href="#备忘录模式的实现" class="headerlink" title="备忘录模式的实现"></a>备忘录模式的实现</h2><p>备忘录</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Memento</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="keyword">private</span> String state; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Memento</span><span class="params">(String state)</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.state=state; </span><br><span class="line">    &#125;     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setState</span><span class="params">(String state)</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.state=state; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getState</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> state; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>发起人</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Originator</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="keyword">private</span> String state;     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setState</span><span class="params">(String state)</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.state=state; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getState</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> state; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Memento <span class="title">createMemento</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Memento(state); </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">restoreMemento</span><span class="params">(Memento m)</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">this</span>.setState(m.getState()); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>管理者</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Caretaker</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">    <span class="keyword">private</span> Memento memento;       </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMemento</span><span class="params">(Memento m)</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        memento=m; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Memento <span class="title">getMemento</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> memento; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Originator or=<span class="keyword">new</span> Originator();</span><br><span class="line">    Caretaker cr=<span class="keyword">new</span> Caretaker();       </span><br><span class="line">    or.setState(<span class="string">"S0"</span>); </span><br><span class="line">    System.out.println(<span class="string">"初始状态:"</span>+or.getState());           </span><br><span class="line">    cr.setMemento(or.createMemento()); <span class="comment">//保存状态      </span></span><br><span class="line">    or.setState(<span class="string">"S1"</span>); </span><br><span class="line">    System.out.println(<span class="string">"新的状态:"</span>+or.getState());        </span><br><span class="line">    or.restoreMemento(cr.getMemento()); <span class="comment">//恢复状态</span></span><br><span class="line">    System.out.println(<span class="string">"恢复状态:"</span>+or.getState());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br>    初始状态:S0<br>    新的状态:S1<br>    恢复状态:S0</p>
-<h2 id="常见案例及应用场景"><a href="#常见案例及应用场景" class="headerlink" title="常见案例及应用场景"></a>常见案例及应用场景</h2><p>常见案例：打游戏时的存档；Windows 里的 ctri + z；IE 中的后退；数据库的事务管理。</p>
+<p><img src="/images/design-pattern/decorator1.png" alt="装饰器模式结构图"></p>
+<h2 id="装饰器模式的实现"><a href="#装饰器模式的实现" class="headerlink" title="装饰器模式的实现"></a>装饰器模式的实现</h2><p>装饰模式的实现代码如下：</p>
+<p>抽象构件角色</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span>  <span class="title">Component</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体构件角色</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteComponent</span> <span class="keyword">implements</span> <span class="title">Component</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteComponent</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"创建具体构件角色"</span>);       </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"调用具体构件角色的方法operation()"</span>);           </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>抽象装饰角色</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Decorator</span> <span class="keyword">implements</span> <span class="title">Component</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Component component;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Decorator</span><span class="params">(Component component)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.component=component;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        component.operation();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体装饰角色</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteDecorator</span> <span class="keyword">extends</span> <span class="title">Decorator</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteDecorator</span><span class="params">(Component component)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(component);</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">operation</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.operation();</span><br><span class="line">        addedFunction();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addedFunction</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"为具体构件角色增加额外的功能addedFunction()"</span>);           </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    Component p=<span class="keyword">new</span> ConcreteComponent();</span><br><span class="line">    p.operation();</span><br><span class="line">    System.out.println(<span class="string">"---------------------------------"</span>);</span><br><span class="line">    Component d=<span class="keyword">new</span> ConcreteDecorator(p);</span><br><span class="line">    d.operation();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>创建具体构件角色
+调用具体构件角色的方法operation()
+---------------------------------
+调用具体构件角色的方法operation()
+为具体构件角色增加额外的功能addedFunction()</code></pre><h2 id="常见案例及应用场景"><a href="#常见案例及应用场景" class="headerlink" title="常见案例及应用场景"></a>常见案例及应用场景</h2><p>常见案例： Java I/O 标准库的设计。例如，InputStream 的子类 FilterInputStream，OutputStream 的子类 FilterOutputStream，Reader 的子类 BufferedReader 以及 FilterReader，还有 Writer 的子类 BufferedWriter、FilterWriter 以及 PrintWriter 等，它们都是抽象装饰类。</p>
 <p>应用场景：</p>
 <ul>
-<li>需要保存/恢复数据的相关状态场景。 </li>
-<li>提供一个可回滚的操作。</li>
+<li>当需要给一个现有类添加附加职责，而又不能采用生成子类的方法进行扩充时。例如，该类被隐藏或者该类是终极类或者采用继承方式会产生大量的子类。</li>
+<li>当需要通过对现有的一组基本功能进行排列组合而产生非常多的功能时，采用继承关系很难实现，而采用装饰模式却很好实现。</li>
+<li>当对象的功能要求可以动态地添加，也可以再动态地撤销时。</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>借助备忘录模式，可以捕捉对象的状态，以便于将来把对象恢复为以前的状态。具体采用哪种方法来储存对象状态，取决于对象状态需要保存时间的长短。</p>
-<p>其主要优点如下：</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们可以借助装饰器模式，能够灵活设计具有公共操作（这些公共操作往往具有不同的实现方式）的类，这样就可以在运行时集成新的混合的变化。</p>
+<p>装饰（Decorator）模式的主要优点有：</p>
 <ul>
-<li>提供了一种可以恢复状态的机制。当用户需要时能够比较方便地将数据恢复到某个历史的状态。</li>
-<li>实现了内部状态的封装。除了创建它的发起人之外，其他对象都不能够访问这些状态信息。</li>
-<li>简化了发起人类。发起人不需要管理和保存其内部状态的各个备份，所有状态信息都保存在备忘录中，并由管理者进行管理，这符合单一职责原则。</li>
+<li>采用装饰模式扩展对象的功能比采用继承方式更加灵活。</li>
+<li>可以设计出多个不同的具体装饰类，创造出多个不同行为的组合。</li>
 </ul>
-<p>其主要缺点是：资源消耗大。如果要保存的内部状态信息过多或者特别频繁，将会占用比较大的内存资源。</p>
+<p>其主要缺点是：装饰模式增加了许多子类，如果过度使用会使程序变得很复杂。</p>
 
       
     </div>
@@ -495,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/prototype-pattern.html" rel="next" title="设计模式之原型模式（十四）">
-                <i class="fa fa-chevron-left"></i> 设计模式之原型模式（十四）
+              <a href="/interpreter-pattern.html" rel="next" title="设计模式之解释器模式（二十）">
+                <i class="fa fa-chevron-left"></i> 设计模式之解释器模式（二十）
               </a>
             
           </div>
@@ -505,8 +512,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/template-method-pattern.html" rel="prev" title="设计模式之模板方法模式（十六）">
-                设计模式之模板方法模式（十六） <i class="fa fa-chevron-right"></i>
+              <a href="/iterator-pattern.html" rel="prev" title="设计模式之迭代器模式（二十二）">
+                设计模式之迭代器模式（二十二） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -700,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘录模式的结构"><span class="nav-number">1.</span> <span class="nav-text">备忘录模式的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备忘录模式的实现"><span class="nav-number">2.</span> <span class="nav-text">备忘录模式的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见案例及应用场景"><span class="nav-number">3.</span> <span class="nav-text">常见案例及应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰器模式的结构"><span class="nav-number">1.</span> <span class="nav-text">装饰器模式的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装饰器模式的实现"><span class="nav-number">2.</span> <span class="nav-text">装饰器模式的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见案例及应用场景"><span class="nav-number">3.</span> <span class="nav-text">常见案例及应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
