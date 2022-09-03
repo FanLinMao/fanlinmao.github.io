@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="搭建博客,Hexo," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="拥有github账号访问github网址，点击sign up注册账号，如果有账户忽略此步骤。 新建git仓库登录github，然后新建仓库，仓库名建议为username.github.io。为什么建议这个，假如你新建仓库名为blog，那么在后面生成的Github Pages的首页访问链接为https:&#x2F;&#x2F;username.github.io&#x2F;blog。如果新建的仓库名为前者username.git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub Pages和Hexo博客搭建详细教程">
+<meta property="og:url" content="https://linmao.top/website-construction-tutorial.html">
+<meta property="og:site_name" content="Flemming的博客">
+<meta property="og:description" content="拥有github账号访问github网址，点击sign up注册账号，如果有账户忽略此步骤。 新建git仓库登录github，然后新建仓库，仓库名建议为username.github.io。为什么建议这个，假如你新建仓库名为blog，那么在后面生成的Github Pages的首页访问链接为https:&#x2F;&#x2F;username.github.io&#x2F;blog。如果新建的仓库名为前者username.git">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p1.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p2.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p2-1.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p2-2.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p3.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p4.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p6.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p5.png">
+<meta property="og:image" content="https://linmao.top/images/website-tutorial/p7.png">
+<meta property="article:published_time" content="2020-07-08T13:48:07.000Z">
+<meta property="article:modified_time" content="2022-09-03T13:18:19.083Z">
+<meta property="article:author" content="Flemming">
+<meta property="article:tag" content="搭建博客">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://linmao.top/images/website-tutorial/p1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://linmao.top/website-construction-tutorial.html"/>
+
+
+
+
+
+  <title>GitHub Pages和Hexo博客搭建详细教程 | Flemming的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0f51146eea3da494ce1bdfb7fbb48a7a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Flemming的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">技术日新月异，学无止境</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-backend">
+          <a href="/categories/backend/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br />
+            
+            后端记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-bigdata">
+          <a href="/categories/bigdata/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br />
+            
+            大数据
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linmao.top/website-construction-tutorial.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Flemming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flemming的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GitHub Pages和Hexo博客搭建详细教程</h1>
+        
+
+        <div class="post-meta">
+		  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-08T21:48:07+08:00">
+                2020-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">博客教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/website-construction-tutorial.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/website-construction-tutorial.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  27 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="拥有github账号"><a href="#拥有github账号" class="headerlink" title="拥有github账号"></a>拥有github账号</h2><p>访问<a href="https://github.com" target="_blank" rel="noopener">github网址</a>，点击sign up注册账号，如果有账户忽略此步骤。<br><img src="/images/website-tutorial/p1.png" alt="注册github"></p>
+<h2 id="新建git仓库"><a href="#新建git仓库" class="headerlink" title="新建git仓库"></a>新建git仓库</h2><p>登录github，然后新建仓库，仓库名建议为<code>username.github.io</code>。为什么建议这个，假如你新建仓库名为<code>blog</code>，那么在后面生成的Github Pages的首页访问链接为<code>https://username.github.io/blog</code>。<br>如果新建的仓库名为前者<code>username.github.io</code>，生成的Github Pages的首页访问链接则为<code>https://username.github.io</code>，访问的URL就是GitHub Pages的域名，显得不会多余。<br><img src="/images/website-tutorial/p2.png" alt="新建git仓库"></p>
+<blockquote>
+<p>注意：这里的<code>username</code>指的是你的账户名。</p>
+</blockquote>
+<h2 id="设置仓库为GitHub-Pages"><a href="#设置仓库为GitHub-Pages" class="headerlink" title="设置仓库为GitHub Pages"></a>设置仓库为GitHub Pages</h2><p>进入上一步新建的仓库中，点击settings，看到github pages选项栏。<br>如果在步骤2)中，没有选择初始化一个README.md文件或者新建空的仓库(里面没有任何文件)，就会设置不了Github Pages，也会提示如下所示的信息。<br><img src="/images/website-tutorial/p2-1.png" alt="设置仓库"><br>仓库中有文件，则是如下图所示。<br><img src="/images/website-tutorial/p2-2.png" alt="git pages"></p>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>下载<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a>安装包。</p>
+<blockquote>
+<p>注意：安装时，请确保已选中“添加到PATH”（默认情况下已选中）</p>
+</blockquote>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>安装git是方便操作git命令以及hexo的一些命令，方便快速的发布到git仓库中。<br>根据系统类型，下载对应的git安装包：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo是一个快速，简单且功能强大的，基于Node.js的博客框架。使用Markdown（或其他标记语言）编写页面，然后Hexo会在几秒钟内生成带有精美主题的静态文件。</p>
+<p>然后打开git bash工具，操作如下命令安装hexo：</p>
+<p>1.全局安装hexo</p>
+<pre><code>$ npm install hexo-cli -g</code></pre><p>2.切换到你想要的目录</p>
+<pre><code>$ cd ~/Desktop</code></pre><p>3.初始化一个hexo博客，文件名自定义后会自动创建，这里假设为hexo</p>
+<pre><code>$ hexo init hexo
+$ cd hexo</code></pre><p>初始化完后，文件目录如下(除public外)：<br><img src="/images/website-tutorial/p3.png" alt="hexo dir"><br>4.安装依赖</p>
+<pre><code>$ npm install</code></pre><p>5.本地运行</p>
+<pre><code>$ hexo server</code></pre><p>执行完命令后，直接输入<code>localhost:4000</code>，可以看到默认的hexo博客主题页面。</p>
+<blockquote>
+<p>hexo常用命令：<br>$ hexo clean      #清除缓存文件db.json和生成的public目录<br>$ hexo generate 或 hexo g     #生成静态页面至public目录<br>$ hexo server 或 hexo s        #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>$ hexo deploy 或 hexo d       #部署到GitHub<br>$ hexo help         #查看帮助<br>$ hexo version    #查看Hexo的版本<br>$ hexo new “postName”     #新建文章<br>$ hexo new page “pageName”     #新建页面</p>
+</blockquote>
+<h2 id="配置站点文件"><a href="#配置站点文件" class="headerlink" title="配置站点文件"></a>配置站点文件</h2><p>安装完hexo并初始化好一个博客项目后，会有出现如下图中的文件，</p>
+<p>然后打开_<code>config.yml</code>配置文件，这个配置文件是在项目根目录下，称为<strong>站点配置文件</strong>，这个文件主要是设置网站的信息，比如标题、作者等信息。<br>后续还有themes中的主题文件中包含<code>_config.yml</code>配置文件，这个配置文件是在主题的根目录下（如<code>themes/yilia/_config.yml</code>），称为<strong>主题配置文件</strong>，这个文件主要配置网站页面布局等信息。</p>
+<pre><code># Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Flemming的博客
+subtitle: &apos;&apos;
+description: &apos;&apos;
+keywords: Flemming的个人博客，git博客，hexo博客
+author: Flemming
+language: zh-Hans
+timezone: &apos;&apos;
+
+# URL
+## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
+url: https://linmao.top
+root: /
+permalink: :title.html
+#permalink: :year/:month/:day/:title/
+permalink_defaults:
+#pretty_urls:
+#  trailing_index: true # Set to false to remove trailing &apos;index.html&apos; from permalinks
+ # trailing_html: true # Set to false to remove trailing &apos;.html&apos; from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: &apos;&apos;
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: &apos;&apos;
+  wrap: true
+  hljs: false
+
+# Home page setting
+# path: Root path for your blogs index page. (default = &apos;&apos;)
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: &apos;&apos;
+  per_page: 10
+  order_by: -date
+
+# Category &amp; Tag
+default_category: categories
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## Use post&apos;s date for updated date unless set in front-matter
+use_date_for_updated: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the &apos;source/&apos; folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  #当执行hexo deploy命令时，会发布到该指定的git仓库中，这里指定你新建的博客仓库。
+  repository: git@github.com:xxxx/xxxx.github.io.git
+  branch: master
+
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true</code></pre><blockquote>
+<p>需要注意：“: ”所有冒号后边需要有一个“空格”，避免引起不必要的错误。</p>
+</blockquote>
+<h2 id="选择喜欢的主题"><a href="#选择喜欢的主题" class="headerlink" title="选择喜欢的主题"></a>选择喜欢的主题</h2><p>hexo提供了很多主题，具体的可查看和预览官网 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a>。<br>介绍几款个人比较喜欢的：</p>
+<ul>
+<li><a href="https://github.com/pinggod/hexo-theme-jekyll" target="_blank" rel="noopener">hexo-theme-jekyll</a></li>
+<li><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">hexo-theme-yilia</a></li>
+<li><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a></li>
+</ul>
+<p>1.在创建的博客项目主目录下</p>
+<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></pre><p>也可手动下载yilia主题，下载完后，直接将文件放在项目目录下的themes下面。<br><img src="/images/website-tutorial/p4.png" alt="themes pic"><br>2.修改站点配置文件：将<code>theme: landscape</code>改为<code>theme: yilia</code>，然后重新先后执行执行<code>hexo clean</code>和<code>hexo g</code>来重新生成，最后<code>hexo s</code>本地部署后再访问<code>localhost:4000</code>。</p>
+<blockquote>
+<p>主题的切换：当你想换哪个主题可以直接切换哪个主题即可，前提是你都得下载好主题文件放在项目根目录下的themes文件中。</p>
+</blockquote>
+<h2 id="配置主题文件"><a href="#配置主题文件" class="headerlink" title="配置主题文件"></a>配置主题文件</h2><pre><code># Set to true, if you want to fully override the default configuration.
+# Useful if you don&apos;t want to inherit the theme _config.yml configurations.
+override: false
+
+# ---------------------------------------------------------------
+# Site Information Settings
+# ---------------------------------------------------------------
+
+# To get or check favicons visit: https://realfavicongenerator.net
+# Put your favicons into `hexo-site/source/` (recommend) or `hexo-site/themes/next/source/images/` directory.
+
+# Default NexT favicons placed in `hexo-site/themes/next/source/images/` directory.
+# And if you want to place your icons in `hexo-site/source/` root directory, you must remove `/images` prefix from pathes.
+
+# For example, you put your favicons into `hexo-site/source/images` directory.
+# Then need to rename &amp; redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+  safari_pinned_tab: /images/logo.svg
+  #android_manifest: /images/manifest.json
+  #ms_browserconfig: /images/browserconfig.xml
+
+# Set default keywords (Use a comma to separate)
+keywords: &quot;Hexo, NexT&quot;
+
+# Set rss to false to disable feed link.
+# Leave rss as empty to use site&apos;s feed link.
+# Set rss to specific value if you have burned your feed already.
+rss:
+
+footer:
+  # Specify the date when the site was setup.
+  # If not defined, current year will be used.
+  since: 2020
+
+  # Icon between year and copyright info.
+  #icon: user
+
+  # If not defined, will be used `author` from Hexo main config.
+  copyright: 
+  # -------------------------------------------------------------
+  # Hexo link (Powered by Hexo).
+  powered: false
+
+  theme:
+    # Theme &amp; scheme info link (Theme - NexT.scheme).
+    enable: false
+    # Version info of NexT after scheme info (vX.X.X).
+    version: false
+  # -------------------------------------------------------------
+  # Any custom text can be defined here.
+  #custom_text: Hosted by &lt;a target=&quot;_blank&quot; href=&quot;https://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt;
+
+# ---------------------------------------------------------------
+# SEO Settings
+# ---------------------------------------------------------------
+
+# Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
+# See: https://support.google.com/webmasters/answer/139066
+# Tips: Before you open this tag, remember set up your URL in hexo _config.yml ( ex. url: http://yourdomain.com )
+canonical: true
+
+# Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
+seo: false
+
+# If true, will add site-subtitle to index page, added in main hexo config.
+# subtitle: Subtitle
+index_with_subtitle: false
+
+
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+
+# When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -&gt; archives).
+# Usage: `Key: /link/ || icon`
+# Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
+# Value before `||` delimeter is the target link.
+# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
+menu:
+  home: /||home
+  about: /about/||user
+  backend: /categories/backend/||folder
+  bigdata: /categories/bigdata/||folder
+  #tags: /tags/||tags
+  #archives: /archives/||archive
+  #schedule: /schedule/||calendar
+  #sitemap: /sitemap.xml||sitemap
+  #commonweal: /404/||heartbeat
+
+# Enable/Disable menu icons.
+menu_icons:
+  enable: true
+  # Icon Mapping
+  home: home
+  about: user
+  categories: th
+  tags: tags
+  archives: archive
+  commonweal: heartbeat
+
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+# Schemes
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+scheme: Gemini
+
+
+# ---------------------------------------------------------------
+# Sidebar Settings
+# ---------------------------------------------------------------
+
+# Social Links.
+# Usage: `Key: permalink || icon`
+# Key is the link label showing to end users.
+# Value before `||` delimeter is the target permalink.
+# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
+social:
+  GitHub: https://github.com/FanLinMao || github
+  E-Mail: mailto:xxxxxx@outlook.com || envelope
+  CSDN: https://blog.csdn.net/qq_38364053 || copyright
+  #Google: https://plus.google.com/yourname || google
+  #Twitter: https://twitter.com/yourname || twitter
+  #FB Page: https://www.facebook.com/yourname || facebook
+  #VK Group: https://vk.com/yourname || vk
+  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
+  #YouTube: https://youtube.com/yourname || youtube
+  #Instagram: https://instagram.com/yourname || instagram
+  #Skype: skype:yourname?call|chat || skype
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+# Blog rolls
+links_icon: link
+links_title: 网站收藏
+links_layout: block
+#links_layout: inline
+links:
+  百度搜索: https://www.baidu.com/
+
+# Sidebar Avatar
+# in theme directory(source/images): /images/avatar.gif
+# in site  directory(source/uploads): /uploads/avatar.gif
+avatar: /images/blog-avatar.jpg
+
+# Table Of Contents in the Sidebar
+toc:
+  enable: true
+
+  # Automatically add list number to toc.
+  number: true
+
+  # If true, all words will placed on next lines if header width longer then sidebar width.
+  wrap: false
+
+# Creative Commons 4.0 International License.
+# http://creativecommons.org/
+# Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+#creative_commons: by-nc-sa
+#creative_commons:
+
+sidebar:
+  # Sidebar Position, available value: left | right (only for Pisces | Gemini).
+  position: left
+  #position: right
+
+  # Sidebar Display, available value (only for Muse | Mist):
+  #  - post    expand on posts automatically. Default.
+  #  - always  expand for all pages automatically
+  #  - hide    expand only when click on the sidebar toggle icon.
+  #  - remove  Totally remove sidebar including sidebar toggle.
+  display: post
+  #display: always
+  #display: hide
+  #display: remove
+
+  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+  offset: 12
+
+  # Back to top in sidebar (only for Pisces | Gemini).
+  b2t: false
+
+  # Scroll percent label in b2t button.
+  scrollpercent: false
+
+  # Enable sidebar on narrow view (only for Muse | Mist).
+  onmobile: false
+
+
+# ---------------------------------------------------------------
+# Post Settings
+# ---------------------------------------------------------------
+
+# Automatically scroll page to section which is under &lt;!-- more --&gt; mark.
+scroll_to_more: true
+
+# Automatically saving scroll position on each post/page in cookies.
+save_scroll: false
+
+# Automatically excerpt description in homepage as preamble text.
+excerpt_description: true
+
+# Automatically Excerpt. Not recommend.
+# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.
+auto_excerpt:
+  enable: true
+  length: 150
+
+# Post meta display settings
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at: false
+  categories: true
+
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  item_text: true
+  wordcount: true #文章字数
+  min2read: true #阅读时间
+  totalcount: true #总共字数
+  separated_meta: true
+
+# Wechat Subscriber
+#wechat_subscriber:
+  #enabled: true
+  #qcode: /path/to/your/wechatqcode ex. /uploads/wechat-qcode.jpg
+  #description: ex. subscribe to my blog by scanning my public wechat account
+
+# Reward
+#reward_comment: Donate comment here
+#wechatpay: /images/wechatpay.jpg
+#alipay: /images/alipay.jpg
+#bitcoin: /images/bitcoin.png
+
+# Declare license on posts
+post_copyright:
+  enable: false
+  license: CC BY-NC-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+
+# ---------------------------------------------------------------
+# Misc Theme Settings
+# ---------------------------------------------------------------
+
+# Reduce padding / margin indents on devices with narrow width.
+mobile_layout_economy: false
+
+# Android Chrome header panel color ($black-deep).
+android_chrome_color: &quot;#222&quot;
+
+# Custom Logo.
+# !!Only available for Default Scheme currently.
+# Options:
+#   enabled: [true/false] - Replace with specific image
+#   image: url-of-image   - Images&apos;s url
+custom_logo:
+  enabled: false
+  image:
+
+# Code Highlight theme
+# Available value:
+#    normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+highlight_theme: normal
+
+
+# ---------------------------------------------------------------
+# Font Settings
+# - Find fonts on Google Fonts (https://www.google.com/fonts)
+# - All fonts set here will have the following styles:
+#     light, light italic, normal, normal italic, bold, bold italic
+# - Be aware that setting too much fonts will cause site running slowly
+# - Introduce in 5.0.1
+# ---------------------------------------------------------------
+# CAUTION! Safari Version 10.1.2 bug: https://github.com/iissnan/hexo-theme-next/issues/1844
+# To avoid space between header and sidebar in Pisces / Gemini themes recommended to use Web Safe fonts for `global` (and `logo`):
+# Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
+# ---------------------------------------------------------------
+font:
+  enable: false
+
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
+  host:
+
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: xx`. Use `px` as unit.
+
+  # Global font settings used on &lt;body&gt; element.
+  global:
+    external: true
+    family: Lato
+    size:
+
+  # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
+  # Fallback to `global` font settings.
+  headings:
+    external: true
+    family:
+    size:
+
+  # Font settings for posts.
+  # Fallback to `global` font settings.
+  posts:
+    external: true
+    family:
+
+  # Font settings for Logo.
+  # Fallback to `global` font settings.
+  logo:
+    external: true
+    family:
+    size:
+
+  # Font settings for &lt;code&gt; and code blocks.
+  codes:
+    external: true
+    family:
+    size:
+
+
+# ---------------------------------------------------------------
+# Third Party Services Settings
+# ---------------------------------------------------------------
+
+# MathJax Support
+mathjax:
+  enable: false
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+# Han Support docs: https://hanzi.pro/
+han: false
+
+# Swiftype Search API Key
+#swiftype_key:
+
+# Baidu Analytics ID
+baidu_analytics: 0f51146eea3da494ce1bdfb7fbb48a7a
+
+# Duoshuo ShortName
+#duoshuo_shortname:
+
+# Disqus
+disqus:
+  enable: false
+  shortname:
+  count: true
+
+# Hypercomments
+#hypercomments_id:
+
+# changyan
+changyan:
+  enable: false
+  appid:
+  appkey:
+
+
+# Valine.
+# You can get your appid and appkey from https://leancloud.cn
+# more info please open https://valine.js.org
+valine:
+  enable: true
+  appid: lr4BgMMr8WFeEnAVxpFEygQM-gzGzoHsz # your leancloud application appid
+  appkey: 3ahMdKGAJ0n9yHolO1oOAfkd # your leancloud application appkey
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: 给个鼓励，您的支持就是我最大的动力^_^ # comment box placeholder
+  avatar: mm # gravatar style
+  guest_info: nick,mail,link # custom comment header
+  pageSize: 10 # pagination size
+
+
+# Support for youyan comments system.
+# You can get your uid from http://www.uyan.cc
+#youyan_uid: your uid
+
+# Support for LiveRe comments system.
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+#livere_uid: your uid
+
+# Gitment
+# Introduction: https://imsun.net/posts/gitment-introduction/
+# You can get your Github ID from https://api.github.com/users/&lt;Github username&gt;
+gitment:
+  enable: false
+  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+  count: true # Show comments count in post meta area
+  lazy: false # Comments lazy loading with a button
+  cleanly: false # Hide &apos;Powered by ...&apos; on footer, and more
+  language: # Force language, or auto switch by theme
+  github_user: # MUST HAVE, Your Github ID
+  github_repo: # MUST HAVE, The repo you use to store Gitment comments
+  client_id: # MUST HAVE, Github client id for the Gitment
+  client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
+  redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
+
+# Baidu Share
+# Available value:
+#    button | slide
+# Warning: Baidu Share does not support https.
+#baidushare:
+##  type: button
+
+# Share
+# This plugin is more useful in China, make sure you known how to use it.
+# And you can find the use guide at official webiste: http://www.jiathis.com/.
+# Warning: JiaThis does not support https.
+#jiathis:
+  ##uid: Get this uid from http://www.jiathis.com/
+#add_this_id:
+
+# Share
+#duoshuo_share: true
+
+# NeedMoreShare2
+# This plugin is a pure javascript sharing lib which is useful in China.
+# See: https://github.com/revir/need-more-share2
+# Also see: https://github.com/DzmVasileusky/needShareButton
+# iconStyle: default | box
+# boxForm: horizontal | vertical
+# position: top / middle / bottom + Left / Center / Right
+# networks: Weibo,Wechat,Douban,QQZone,Twitter,Linkedin,Mailto,Reddit,
+#           Delicious,StumbleUpon,Pinterest,Facebook,GooglePlus,Slashdot,
+#           Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,
+#           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
+needmoreshare2:
+  enable: true
+  postbottom:
+    enable: true
+    options:
+      iconStyle: default
+      boxForm: horizontal
+      position: bottomCenter
+      networks: Weibo,Wechat,QQZone
+  float:
+    enable: false
+    options:
+      iconStyle: box
+      boxForm: horizontal
+      position: middleRight
+      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters/
+#google_site_verification:
+
+# Google Analytics
+#google_analytics:
+
+# Bing Webmaster tools verification setting
+# See: https://www.bing.com/webmaster/
+#bing_site_verification:
+
+# Yandex Webmaster tools verification setting
+# See: https://webmaster.yandex.ru/
+#yandex_site_verification:
+
+# CNZZ count
+#cnzz_siteid:
+
+# Application Insights
+# See https://azure.microsoft.com/en-us/services/application-insights/
+# application_insights:
+
+# Make duoshuo show UA
+# user_id must NOT be null when admin_enable is true!
+# you can visit http://dev.duoshuo.com get duoshuo user id.
+duoshuo_info:
+  ua_enable: true
+  admin_enable: false
+  user_id: 0
+  #admin_nickname: Author
+
+# Post widgets &amp; FB/VK comments settings.
+# ---------------------------------------------------------------
+# Facebook SDK Support.
+# https://github.com/iissnan/hexo-theme-next/pull/410
+facebook_sdk:
+  enable:       false
+  app_id:       #&lt;app_id&gt;
+  fb_admin:     #&lt;user_id&gt;
+  like_button:  #true
+  webmaster:    #true
+
+# Facebook comments plugin
+# This plugin depends on Facebook SDK.
+# If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
+facebook_comments_plugin:
+  enable:       false
+  num_of_posts: 10    # min posts num is 1
+  width:        100%  # default width is 550px
+  scheme:       light # default scheme is light (light or dark)
+
+# VKontakte API Support.
+# To get your AppID visit https://vk.com/editapp?act=create
+vkontakte_api:
+  enable:       false
+  app_id:       #&lt;app_id&gt;
+  like:         true
+  comments:     true
+  num_of_posts: 10
+
+# Star rating support to each article.
+# To get your ID visit https://widgetpack.com
+rating:
+  enable: false
+  id:     #&lt;app_id&gt;
+  color:  fc6423
+# ---------------------------------------------------------------
+
+# Show number of visitors to each article.
+# You can visit https://leancloud.cn get AppID and AppKey.
+leancloud_visitors:
+  enable: false
+  app_id: #&lt;app_id&gt;
+  app_key: #&lt;app_key&gt;
+
+# Another tool to show number of visitors to each article.
+# visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
+# visit https://firebase.google.com/docs/firestore/ to get more information about firestore
+firestore:
+  enable: false
+  collection: articles #required, a string collection name to access firestore database
+  apiKey: #required
+  projectId: #required
+  bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
+
+# Show PV/UV of the website/page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi/
+busuanzi_count:
+  # count values only if the other configs are false
+  enable: true
+  # custom uv span for the whole site
+  site_uv: true
+  site_uv_header: &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt; 访问人数
+  site_uv_footer: 人
+  # custom pv span for the whole site
+  site_pv: true
+  site_pv_header: &lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt; 总访问量
+  site_pv_footer: 次
+  # custom pv span for one page only
+  page_pv: true
+  page_pv_header: &lt;i class=&quot;fa fa-file-o&quot;&gt;&lt;/i&gt; 浏览
+  page_pv_footer: 次
+
+
+# Tencent analytics ID
+# tencent_analytics:
+
+# Tencent MTA ID
+# tencent_mta:
+
+
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
+baidu_push: false
+
+# Google Calendar
+# Share your recent schedule to others via calendar page
+#
+# API Documentation:
+# https://developers.google.com/google-apps/calendar/v3/reference/events/list
+calendar:
+  enable: false
+  calendar_id: &lt;required&gt;
+  api_key: &lt;required&gt;
+  orderBy: startTime
+  offsetMax: 24
+  offsetMin: 4
+  timeZone:
+  showDeleted: false
+  singleEvents: true
+  maxResults: 250
+
+# Algolia Search
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: &quot;We didn&apos;t find any results for the search: ${query}&quot;
+    hits_stats: &quot;${hits} results found in ${time} ms&quot;
+
+# Local search
+# Dependencies: https://github.com/flashlab/hexo-generator-search
+local_search:
+  enable: false
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+
+
+# ---------------------------------------------------------------
+# Tags Settings
+# ---------------------------------------------------------------
+
+# External URL with BASE64 encrypt &amp; decrypt.
+# Usage: {% exturl text url "title" %}
+# Alias: {% extlink text url "title" %}
+exturl: false
+
+# Note tag (bs-callout).
+note:
+  # Note tag style values:
+  #  - simple    bs-callout old alert style. Default.
+  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: simple
+  icons: false
+  border_radius: 3
+  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  light_bg_offset: 0
+
+# Label tag.
+label: true
+
+# Tabs tag.
+tabs:
+  enable: true
+  transition:
+    tabs: false
+    labels: true
+  border_radius: 0
+
+
+#! ---------------------------------------------------------------
+#! DO NOT EDIT THE FOLLOWING SETTINGS
+#! UNLESS YOU KNOW WHAT YOU ARE DOING
+#! ---------------------------------------------------------------
+
+# Use velocity to animate everything.
+motion:
+  enable: true
+  async: false
+  transition:
+    # Transition variants:
+    # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
+    # swoopIn | swoopOut | whirlIn | whirlOut | shrinkIn | shrinkOut | expandIn | expandOut
+    # bounceIn | bounceOut | bounceUpIn | bounceUpOut | bounceDownIn | bounceDownOut | bounceLeftIn | bounceLeftOut | bounceRightIn | bounceRightOut
+    # slideUpIn | slideUpOut | slideDownIn | slideDownOut | slideLeftIn | slideLeftOut | slideRightIn | slideRightOut
+    # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut
+    # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
+    post_block: fadeIn
+    post_header: slideDownIn
+    post_body: slideDownIn
+    coll_header: slideLeftIn
+    # Only for Pisces | Gemini.
+    sidebar: slideUpIn
+
+# Fancybox
+fancybox: true
+
+# Progress bar in the top during page loading.
+pace: true
+# Themes list:
+#pace-theme-big-counter
+#pace-theme-bounce
+#pace-theme-barber-shop
+#pace-theme-center-atom
+#pace-theme-center-circle
+#pace-theme-center-radar
+#pace-theme-center-simple
+#pace-theme-corner-indicator
+#pace-theme-fill-left
+#pace-theme-flash
+#pace-theme-loading-bar
+#pace-theme-mac-osx
+#pace-theme-minimal
+# For example
+# pace_theme: pace-theme-center-simple
+pace_theme: pace-theme-minimal
+
+# Canvas-nest
+canvas_nest: false
+
+# three_waves
+three_waves: true
+
+# canvas_lines
+canvas_lines: false
+
+# canvas_sphere
+canvas_sphere: false
+
+# Only fit scheme Pisces
+# Canvas-ribbon
+# size: The width of the ribbon.
+# alpha: The transparency of the ribbon.
+# zIndex: The display level of the ribbon.
+canvas_ribbon:
+  enable: false
+  size: 300
+  alpha: 0.6
+  zIndex: -1
+
+# Script Vendors.
+# Set a CDN address for the vendor you want to customize.
+# For example
+#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
+# Be aware that you should use the same version as internal ones to avoid potential problems.
+# Please use the https protocol of CDN files when you enable https on your site.
+vendors:
+  # Internal path prefix. Please do not edit it.
+  _internal: lib
+
+  # Internal version: 2.1.3
+  jquery:
+
+  # Internal version: 2.1.5
+  # See: http://fancyapps.com/fancybox/
+  fancybox:
+  fancybox_css:
+
+  # Internal version: 1.0.6
+  # See: https://github.com/ftlabs/fastclick
+  fastclick:
+
+  # Internal version: 1.9.7
+  # See: https://github.com/tuupola/jquery_lazyload
+  lazyload:
+
+  # Internal version: 1.2.1
+  # See: http://VelocityJS.org
+  velocity:
+
+  # Internal version: 1.2.1
+  # See: http://VelocityJS.org
+  velocity_ui:
+
+  # Internal version: 0.7.9
+  # See: https://faisalman.github.io/ua-parser-js/
+  ua_parser:
+
+  # Internal version: 4.6.2
+  # See: http://fontawesome.io/
+  fontawesome:
+
+  # Internal version: 1
+  # https://www.algolia.com
+  algolia_instant_js:
+  algolia_instant_css:
+
+  # Internal version: 1.0.2
+  # See: https://github.com/HubSpot/pace
+  # Or use direct links below:
+  # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
+  # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
+  pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
+  pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
+
+  # Internal version: 1.0.0
+  # https://github.com/hustcc/canvas-nest.js
+  canvas_nest:
+
+  # three
+  three:
+
+  # three_waves
+  # https://github.com/jjandxa/three_waves
+  three_waves:
+
+  # three_waves
+  # https://github.com/jjandxa/canvas_lines
+  canvas_lines:
+
+  # three_waves
+  # https://github.com/jjandxa/canvas_sphere
+  canvas_sphere:
+
+  # Internal version: 1.0.0
+  # https://github.com/zproo/canvas-ribbon
+  canvas_ribbon:
+
+  # Internal version: 3.3.0
+  # https://github.com/ethantw/Han
+  han:
+
+  # needMoreShare2
+  # https://github.com/revir/need-more-share2
+  needMoreShare2:
+
+
+# Assets
+css: css
+js: js
+images: images
+
+# Theme version
+version: 5.1.4
+
+# Fireworks
+fireworks: true</code></pre><h2 id="配置SSH-key"><a href="#配置SSH-key" class="headerlink" title="配置SSH key"></a>配置SSH key</h2><p>配置这个是为了可以直接提交代码到github仓库中。</p>
+<p>先全局配置下你的git用户名和邮箱：</p>
+<pre><code>$ git config --global user.name &quot;xxx&quot;// 你的github用户名，非昵称
+$ git config --global user.email  &quot;xxx@qq.com&quot;// 填写你的github注册邮箱</code></pre><p>查看本地ssh key：</p>
+<pre><code>$ ls ~/.ssh #检查本机已存在的ssh密钥</code></pre><p>如果.ssh这个目录下有id_rsa.pub文件，直接将文件中的密钥复制到github的SSH keys中，没有则需要生成密钥：</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;github注册邮箱地址&quot;</code></pre><p>生成后，再复制到SSH keys中。<br><img src="/images/website-tutorial/p6.png" alt="ssh keys"></p>
+<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><p>在项目根目录下执行：</p>
+<pre><code>$ hexo clean  #清理一下
+$ hexo g  #生成public文件，public里都是静态文件
+$ hexo s  #此步可省</code></pre><p>部署之前需要安装部署插件：</p>
+<pre><code>$ npm install hexo-deployer-git --save</code></pre><p>再确认<code>站点配置文件</code>是否配置git地址：</p>
+<pre><code>deploy:
+  type: git
+  repository: git@github.com:FanLinMao/fanlinmao.github.io.git
+  branch: master</code></pre><p>执行部署：</p>
+<pre><code>$ hexo d  #部署</code></pre><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>到这里，我们可以使用<code>username.github.io</code>来访问了，但是网站想要个性点，可以自己买个域名。<br>买了域名后，需要进行实名认证，如果没有实名，域名解析状态会显示不正常，并且访问也会404错误的。<br>域名配置最常见有2种方式，CNAME和A记录，CNAME填写域名，A记录填写IP，由于不带www方式只能采用A记录，所以必须先ping一下<code>你的用户名.github.io</code>的IP，然后到你的域名DNS设置页，将A记录指向你ping出来的IP，将CNAME指向<code>你的用户名.github.io</code>，这样可以保证无论是否添加www都可以访问，笔者买的阿里云的.top域名，首年10元。设置如下：<br><img src="/images/website-tutorial/p5.png" alt="域名"><br>保留一个CNAME，CNAME中写你的域名，将 CNAME文件放到source目录下<br><img src="/images/website-tutorial/p7.png" alt="cname"></p>
+<p>绑定完后，再重新部署下，<code>hexo clean</code>,<code>hexo g</code>,<code>hexo d</code>你会看到仓库中github pages的部署地址已改为你的域名，可以通过自己买的域名访问了。</p>
+<blockquote>
+<p>本文参考：<br>官方文档：<br><a href="https://hexo.io/docs/" target="_blank" rel="noopener">https://hexo.io/docs/</a><br><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html</a><br>详细主题配置文件：<br><a href="https://www.jianshu.com/p/3a05351a37dc" target="_blank" rel="noopener">https://www.jianshu.com/p/3a05351a37dc</a><br><a href="https://segmentfault.com/a/1190000009544924?utm_medium=referral&amp;utm_source=tuicool" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924?utm_medium=referral&amp;utm_source=tuicool</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+	
+	
+      <div>
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/website-construction-tutorial.html">GitHub Pages和Hexo博客搭建详细教程</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Flemming 的个人博客">Flemming</a></p>
+  <p><span>发布时间:</span>2020年07月08日 - 21:48</p>
+  <p><span>最后更新:</span>2022年09月03日 - 21:18</p>
+  <p><span>原始链接:</span><a href="/website-construction-tutorial.html" title="GitHub Pages和Hexo博客搭建详细教程">https://linmao.top/website-construction-tutorial.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://linmao.top/website-construction-tutorial.html"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      </div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># 搭建博客</a>
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/test-bigdata.html" rel="next" title="test-bigdata">
+                <i class="fa fa-chevron-left"></i> test-bigdata
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/design-patten-introduce.html" rel="prev" title="浅谈设计模式之初">
+                浅谈设计模式之初 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog-avatar.jpg"
+                alt="Flemming" />
+            
+              <p class="site-author-name" itemprop="name">Flemming</p>
+              <p class="site-description motion-element" itemprop="description">每天进步一点点，厚积薄发</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/FanLinMao" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:flemmingcoder@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_38364053" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://qr.topscan.com/api.php?text=https%3A%2F%2Fu.wechat.com%2FMB9UmKlFtdZnnvqiqJvG3wY" target="_blank" title="WeChat">
+                      
+                        <i class="fa fa-fw fa-weixin"></i>WeChat</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                网站收藏
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://cn.bing.com/" title="必应搜索" target="_blank">必应搜索</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.yiibai.com/" title="易百教程" target="_blank">易百教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://hao.199it.com/" title="大数据导航" target="_blank">大数据导航</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#拥有github账号"><span class="nav-number">1.</span> <span class="nav-text">拥有github账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建git仓库"><span class="nav-number">2.</span> <span class="nav-text">新建git仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置仓库为GitHub-Pages"><span class="nav-number">3.</span> <span class="nav-text">设置仓库为GitHub Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Node-js"><span class="nav-number">4.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装git"><span class="nav-number">5.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">6.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置站点文件"><span class="nav-number">7.</span> <span class="nav-text">配置站点文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择喜欢的主题"><span class="nav-number">8.</span> <span class="nav-text">选择喜欢的主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置主题文件"><span class="nav-number">9.</span> <span class="nav-text">配置主题文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SSH-key"><span class="nav-number">10.</span> <span class="nav-text">配置SSH key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署博客"><span class="nav-number">11.</span> <span class="nav-text">部署博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">12.</span> <span class="nav-text">绑定域名</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Flemming</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">30.1k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '9LUaDldVsEeul5P2JrbCSkWy-gzGzoHsz',
+        appKey: 'm6gAjH3WnFs8dfwYgSFn4WjR',
+        placeholder: '给个鼓励，您的支持就是我最大的动力^_^',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "default";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,QQZone";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+  
+</body>
+</html>
