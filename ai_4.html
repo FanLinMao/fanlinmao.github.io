@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="设计模式," />
+  <meta name="keywords" content="AI应用研究所," />
 
 
 
@@ -90,19 +90,27 @@
 
 
 
-<meta name="description" content="模板方法模式的意图是在一个方法里实现一个算法，并推迟定义算法中的某些步骤，从而让其他类重新定义它们。 模板方法模式的结构模板方法模式包含以下主要角色。 (1) 抽象类（Abstract Class）：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以">
+<meta name="description" content="折腾了半天终于把 OpenClaw 接上了 QQ Bot，这篇教程手把手带你完成：QQ 开放平台创建 Bot → OpenClaw 配置 → 验证连通性。跟着走就行，不难。 第一步：在QQ开放平台创建Bot1.1 登录 QQ 开放平台打开QQ开发平台(浏览器访问https:&#x2F;&#x2F;q.qq.com)，用手机 QQ 扫码登录。 1.2 创建机器人进入控制台，点击 「创建机器人」，填写以下信息：  机器人">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之模板方法模式（十六）">
-<meta property="og:url" content="https://linmao.top/template-method-pattern.html">
+<meta property="og:title" content="【教程】OpenClaw对接QQBot详细指南">
+<meta property="og:url" content="https://linmao.top/ai_4.html">
 <meta property="og:site_name" content="林茂的博客">
-<meta property="og:description" content="模板方法模式的意图是在一个方法里实现一个算法，并推迟定义算法中的某些步骤，从而让其他类重新定义它们。 模板方法模式的结构模板方法模式包含以下主要角色。 (1) 抽象类（Abstract Class）：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以">
-<meta property="og:image" content="https://linmao.top/images/design-pattern/templateMethod1.png">
-<meta property="article:published_time" content="2020-08-16T13:44:08.000Z">
-<meta property="article:modified_time" content="2022-09-03T13:18:19.082Z">
+<meta property="og:description" content="折腾了半天终于把 OpenClaw 接上了 QQ Bot，这篇教程手把手带你完成：QQ 开放平台创建 Bot → OpenClaw 配置 → 验证连通性。跟着走就行，不难。 第一步：在QQ开放平台创建Bot1.1 登录 QQ 开放平台打开QQ开发平台(浏览器访问https:&#x2F;&#x2F;q.qq.com)，用手机 QQ 扫码登录。 1.2 创建机器人进入控制台，点击 「创建机器人」，填写以下信息：  机器人">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEVeEFBeuj3ghlY05YkGelxsibqPlNPMMfUPn7TtMu0oR8cYicb600tOve2XvrOzj5DuLg6KHbxss3zCf484fMImjrQjSQiauEgo3I/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/iaW3r5V9PuEXFskrhzEszpFeg0RQ0fPzVYyqNeqgmkHfOV3926BibZDcSO2eaFcAOBah3VwnUA2BJOdzeLoyL3Y3rZ5q9jyU4Bmko01LPWzvg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iaW3r5V9PuEXSfYST8YyfCIbqsMl0rdcGNibxhXzhRZiacIRdlShgGY62ydyAN3awgGKPyMJSw7rHEmTl1RtYs4ricBGupAlAbia6M31oBiaXrl7s/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iaW3r5V9PuEUT09Mibjmmgcvw06sBOyBG57wibicsnwOu7zd78RRLLWuvjGX14tL4ibdiafUPryS6tiawvxgL4RIod2XEb1XkOvw8p7sA41FfgIePo/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iaW3r5V9PuEVHTPhY6JVQyPMYyybUzCqKvpk5GRYSCaMOzvS1ibzmBcECxETNLN48KwpVcqB3vGr9R24HATJJKibBcSCoJKkQbNbd9FoFFFttU/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEVzQ3eseVDq8bKKGc92CwIhkEMD6IqibywoHTcX0muVtov6JUVYYy3SUiaHpv0Bfj6RNOEMeNicAgyCSZJuPaicuIMuibqwiaM7ibv8Nk/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEUEsSx46qlibObg6RhM6JnbiaFYdWl2ibfxGguia926NfOHsG6pAm13ezkHwEVwXqjYUcuJSsWhmYJkAVnzygub0G8bYIAVfxnicMiaI/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/iaW3r5V9PuEV3XQbMPKD0hdeqWJq9y6sL0rjwYcSdqFqyasibtBVc3AzXAMk8ibdUl0vVb1mx0HNiaXlPPXN2OYNcyYQyZhXRnb9DnnVUAt9RPE/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7">
+<meta property="og:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEU6KwjG6OFlHIlmWhM2R6jOyozMzLGicxkNuF6icvQ97CR634UeiaEvjkgOPXNRJo5qPicdDFIlYl1ykLkaHuWkOGKPNaWEicgXyVyc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8">
+<meta property="article:published_time" content="2026-04-08T10:50:20.000Z">
+<meta property="article:modified_time" content="2026-04-10T01:56:44.501Z">
 <meta property="article:author" content="Linmao">
-<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="AI应用研究所">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://linmao.top/images/design-pattern/templateMethod1.png">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEVeEFBeuj3ghlY05YkGelxsibqPlNPMMfUPn7TtMu0oR8cYicb600tOve2XvrOzj5DuLg6KHbxss3zCf484fMImjrQjSQiauEgo3I/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0">
 
 
 
@@ -132,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="https://linmao.top/template-method-pattern.html"/>
+  <link rel="canonical" href="https://linmao.top/ai_4.html"/>
 
 
 
 
 
-  <title>设计模式之模板方法模式（十六） | 林茂的博客</title>
+  <title>【教程】OpenClaw对接QQBot详细指南 | 林茂的博客</title>
   
 
 
@@ -315,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linmao.top/template-method-pattern.html">
+    <link itemprop="mainEntityOfPage" href="https://linmao.top/ai_4.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Linmao">
@@ -332,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式之模板方法模式（十六）</h1>
+          <h1 class="post-title" itemprop="name headline">【教程】OpenClaw对接QQBot详细指南</h1>
         
 
         <div class="post-meta">
@@ -345,8 +353,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-16T21:44:08+08:00">
-                2020-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2026-04-08T18:50:20+08:00">
+                2026-04-08
               </time>
             
 
@@ -368,8 +376,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/backend/" itemprop="url" rel="index">
-                    <span itemprop="name">后端</span>
+                  <a href="/categories/ai-search/" itemprop="url" rel="index">
+                    <span itemprop="name">AI应用研究所</span>
                   </a>
                 </span>
 
@@ -386,8 +394,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/template-method-pattern.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/template-method-pattern.html" itemprop="commentCount"></span>
+                <a href="/ai_4.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/ai_4.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  528
                 </span>
               
 
@@ -430,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -451,45 +459,94 @@
       
 
       
-        <p>模板方法模式的意图是在一个方法里实现一个算法，并推迟定义算法中的某些步骤，从而让其他类重新定义它们。</p>
-<h2 id="模板方法模式的结构"><a href="#模板方法模式的结构" class="headerlink" title="模板方法模式的结构"></a>模板方法模式的结构</h2><p>模板方法模式包含以下主要角色。</p>
-<p>(1) 抽象类（Abstract Class）：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。</p>
-<p>① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。</p>
-<p>② 基本方法：是整个算法中的一个步骤，包含以下几种类型。</p>
+        <p>折腾了半天终于把 OpenClaw 接上了 QQ Bot，这篇教程手把手带你完成：QQ 开放平台创建 Bot → OpenClaw 配置 → 验证连通性。跟着走就行，不难。</p>
+<h2 id="第一步：在QQ开放平台创建Bot"><a href="#第一步：在QQ开放平台创建Bot" class="headerlink" title="第一步：在QQ开放平台创建Bot"></a>第一步：在QQ开放平台创建Bot</h2><h3 id="1-1-登录-QQ-开放平台"><a href="#1-1-登录-QQ-开放平台" class="headerlink" title="1.1 登录 QQ 开放平台"></a><strong>1.1 登录 QQ 开放平台</strong></h3><p>打开QQ开发平台(浏览器访问<a href="https://q.qq.com)，用手机" target="_blank" rel="noopener">https://q.qq.com)，用手机</a> QQ 扫码登录。</p>
+<h3 id="1-2-创建机器人"><a href="#1-2-创建机器人" class="headerlink" title="1.2 创建机器人"></a><strong>1.2 创建机器人</strong></h3><p>进入控制台，点击 <strong>「创建机器人」</strong>，填写以下信息：</p>
 <ul>
-<li>抽象方法：在抽象类中申明，由具体子类实现。</li>
-<li>具体方法：在抽象类中已经实现，在具体子类中可以继承或重写它。</li>
-<li>钩子方法：在抽象类中已经实现，包括用于判断的逻辑方法和需要子类重写的空方法两种。</li>
+<li><strong>机器人名称   — 你想要的昵称</strong></li>
+<li><strong>机器人描述   — 简单说明用途</strong></li>
+<li><strong>头像        — 上传一张头像</strong></li>
 </ul>
-<p>(2) 具体子类（Concrete Class）：实现抽象类中所定义的抽象方法和钩子方法，它们是一个顶级逻辑的一个组成步骤。</p>
-<p><img src="/images/design-pattern/templateMethod1.png" alt="模板方法模式结构图"></p>
-<h2 id="模板方法模式的实现"><a href="#模板方法模式的实现" class="headerlink" title="模板方法模式的实现"></a>模板方法模式的实现</h2><p>模板方法模式的代码如下：</p>
-<p>抽象类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TemplateMethod</span><span class="params">()</span> <span class="comment">//模板方法</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        SpecificMethod();</span><br><span class="line">        abstractMethod1();          </span><br><span class="line">         abstractMethod2();</span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SpecificMethod</span><span class="params">()</span> <span class="comment">//具体方法</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"抽象类中的具体方法被调用..."</span>);</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">abstractMethod1</span><span class="params">()</span></span>; <span class="comment">//抽象方法1</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">abstractMethod2</span><span class="params">()</span></span>; <span class="comment">//抽象方法2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体子类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcreteClass</span> <span class="keyword">extends</span> <span class="title">AbstractClass</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">abstractMethod1</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"抽象方法1的实现被调用..."</span>);</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">abstractMethod2</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"抽象方法2的实现被调用..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TemplateMethodPattern</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        AbstractClass tm=<span class="keyword">new</span> ConcreteClass();</span><br><span class="line">        tm.TemplateMethod();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：<br>    抽象类中的具体方法被调用…<br>    抽象方法1的实现被调用…<br>    抽象方法2的实现被调用…</p>
-<h2 id="常见案例及应用场景"><a href="#常见案例及应用场景" class="headerlink" title="常见案例及应用场景"></a>常见案例及应用场景</h2><p>常见案例：Java 中的 Object clone() 方法。</p>
-<p>应用场景：</p>
-<ol>
-<li>算法的整体步骤很固定，但其中个别部分易变时，这时候可以使用模板方法模式，将容易变的部分抽象出来，供子类实现。</li>
-<li>当多个子类存在公共的行为时，可以将其提取出来并集中到一个公共父类中以避免代码重复。首先，要识别现有代码中的不同之处，并且将不同之处分离为新的操作。最后，用一个调用这些新的操作的模板方法来替换这些不同的代码。</li>
-<li>当需要控制子类的扩展时，模板方法只在特定点调用钩子操作，这样就只允许在这些点进行扩展。</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>模板方法模式的意图并不是要求我们在定义子类前写出模板方法。你可能会在已有的类层次关系中发现一些相似的方法。在这种情况下，你可以提取算法的框架，并将它移到超类中，从而运用模板方法来简化和组织你的代码。</p>
-<p>该模式的主要优点如下：</p>
-<ol>
-<li>它封装了不变部分，扩展可变部分。它把认为是不变部分的算法封装到父类中实现，而把可变部分算法由子类继承实现，便于子类继续扩展。</li>
-<li>它在父类中提取了公共的部分代码，便于代码复用。</li>
-<li>部分方法是由子类实现的，因此子类可以通过扩展方式增加相应的功能，符合开闭原则。</li>
-</ol>
-<p>该模式的主要缺点如下：</p>
-<ol>
-<li>对每个不同的实现都需要定义一个子类，这会导致类的个数增加，系统更加庞大，设计也更加抽象。</li>
-<li>父类中的抽象方法由子类实现，子类执行的结果会影响父类的结果，这导致一种反向的控制结构，它提高了代码阅读的难度。</li>
-</ol>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEVeEFBeuj3ghlY05YkGelxsibqPlNPMMfUPn7TtMu0oR8cYicb600tOve2XvrOzj5DuLg6KHbxss3zCf484fMImjrQjSQiauEgo3I/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaW3r5V9PuEXFskrhzEszpFeg0RQ0fPzVYyqNeqgmkHfOV3926BibZDcSO2eaFcAOBah3VwnUA2BJOdzeLoyL3Y3rZ5q9jyU4Bmko01LPWzvg/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1" alt="图片"></p>
+<h3 id="1-3-获取凭证"><a href="#1-3-获取凭证" class="headerlink" title="1.3 获取凭证"></a><strong>1.3 获取凭证</strong></h3><p>创建完成后，进入机器人详情页，找到以下两个关键信息：</p>
+<table>
+<thead>
+<tr>
+<th>凭证</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AppID</td>
+<td>机器人唯一标识</td>
+</tr>
+<tr>
+<td>AppSecret</td>
+<td>机器人密钥</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>注意</strong>：AppSecret 只会显示一次！离开页面之前务必复制保存。如果忘记了，只能重新生成。</p>
+</blockquote>
+<h2 id="第二步：安装-QQ-Bot-插件"><a href="#第二步：安装-QQ-Bot-插件" class="headerlink" title="第二步：安装 QQ Bot 插件"></a><strong>第二步：安装 QQ Bot 插件</strong></h2><p>OpenClaw 新版本已自带 QQ Bot 插件，无需单独安装。如果版本较旧，可执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openclaw plugins install @tencent-connect/openclaw-qqbot@latest</span><br></pre></td></tr></table></figure>
+
+<p>然后重启Gateway:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openclaw gateway restart</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第三步：配置-OpenClaw"><a href="#第三步：配置-OpenClaw" class="headerlink" title="第三步：配置 OpenClaw"></a><strong>第三步：配置 OpenClaw</strong></h2><h3 id="方式一：命令行快速配置"><a href="#方式一：命令行快速配置" class="headerlink" title="方式一：命令行快速配置"></a><strong>方式一：命令行快速配置</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openclaw channels add --channel qqbot --token "你的AppID:你的AppSecret"</span><br></pre></td></tr></table></figure>
+
+<h3 id="方式二：配置文件"><a href="#方式二：配置文件" class="headerlink" title="方式二：配置文件"></a><strong>方式二：配置文件</strong></h3><p>在 OpenClaw 配置文件中添加：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  channels: &#123;</span><br><span class="line">    qqbot: &#123;</span><br><span class="line">      enabled: true,</span><br><span class="line">      appId: "YOUR_APP_ID",</span><br><span class="line">      clientSecret: "YOUR_APP_SECRET",</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="方式三：命令行交互式配置（推荐）"><a href="#方式三：命令行交互式配置（推荐）" class="headerlink" title="方式三：命令行交互式配置（推荐）"></a><strong>方式三：命令行交互式配置（推荐）</strong></h3><p>打开控制台，输入启动配置命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openclaw config</span><br></pre></td></tr></table></figure>
+
+<p>随后跟着提示一步步往下执行，填写好AppID和AppSecret就可以了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iaW3r5V9PuEXSfYST8YyfCIbqsMl0rdcGNibxhXzhRZiacIRdlShgGY62ydyAN3awgGKPyMJSw7rHEmTl1RtYs4ricBGupAlAbia6M31oBiaXrl7s/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=2" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iaW3r5V9PuEUT09Mibjmmgcvw06sBOyBG57wibicsnwOu7zd78RRLLWuvjGX14tL4ibdiafUPryS6tiawvxgL4RIod2XEb1XkOvw8p7sA41FfgIePo/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iaW3r5V9PuEVHTPhY6JVQyPMYyybUzCqKvpk5GRYSCaMOzvS1ibzmBcECxETNLN48KwpVcqB3vGr9R24HATJJKibBcSCoJKkQbNbd9FoFFFttU/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=4" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEVzQ3eseVDq8bKKGc92CwIhkEMD6IqibywoHTcX0muVtov6JUVYYy3SUiaHpv0Bfj6RNOEMeNicAgyCSZJuPaicuIMuibqwiaM7ibv8Nk/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=5" alt="图片"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEUEsSx46qlibObg6RhM6JnbiaFYdWl2ibfxGguia926NfOHsG6pAm13ezkHwEVwXqjYUcuJSsWhmYJkAVnzygub0G8bYIAVfxnicMiaI/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=6" alt="图片"></p>
+<h2 id="第四步：验证连接"><a href="#第四步：验证连接" class="headerlink" title="第四步：验证连接"></a><strong>第四步：验证连接</strong></h2><p>重启 Gateway 后，在qq消息列表里面和你的机器人对话，可以用内置命令测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;bot-ping</span><br></pre></td></tr></table></figure>
+
+<p>如果返回延迟信息，说明 Bot 已成功连接。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iaW3r5V9PuEV3XQbMPKD0hdeqWJq9y6sL0rjwYcSdqFqyasibtBVc3AzXAMk8ibdUl0vVb1mx0HNiaXlPPXN2OYNcyYQyZhXRnb9DnnVUAt9RPE/640?wx_fmt=jpeg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=7" alt="图片"></p>
+<p>其他内置命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bot-ping</td>
+<td>测试openclaw与qq之间的网络延迟</td>
+</tr>
+<tr>
+<td>/bot-version</td>
+<td>查看openclaw框架版本</td>
+</tr>
+<tr>
+<td>/bot-upgrade</td>
+<td>查看qqbot升级指引</td>
+</tr>
+<tr>
+<td>/bot-help</td>
+<td>查看所有内置命令</td>
+</tr>
+<tr>
+<td>/bot-logs</td>
+<td>导出本地日志文件</td>
+</tr>
+</tbody></table>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a><strong>结语</strong></h2><p>完成以上步骤后，你的 QQ Bot 就接入了 OpenClaw，可以开始 AI 对话了。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaW3r5V9PuEU6KwjG6OFlHIlmWhM2R6jOyozMzLGicxkNuF6icvQ97CR634UeiaEvjkgOPXNRJo5qPicdDFIlYl1ykLkaHuWkOGKPNaWEicgXyVyc/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=8" alt="图片"></p>
 
       
     </div>
@@ -500,6 +557,35 @@
 	
       <div>
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/ai_4.html">【教程】OpenClaw对接QQBot详细指南</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Linmao 的个人博客">Linmao</a></p>
+  <p><span>发布时间:</span>2026年04月08日 - 18:50</p>
+  <p><span>最后更新:</span>2026年04月10日 - 09:56</p>
+  <p><span>原始链接:</span><a href="/ai_4.html" title="【教程】OpenClaw对接QQBot详细指南">https://linmao.top/ai_4.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://linmao.top/ai_4.html"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
       </div>
     
 
@@ -513,7 +599,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+            <a href="/tags/AI%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6%E6%89%80/" rel="tag"># AI应用研究所</a>
           
         </div>
       
@@ -541,8 +627,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/memento-pattern.html" rel="next" title="设计模式之备忘录模式（十五）">
-                <i class="fa fa-chevron-left"></i> 设计模式之备忘录模式（十五）
+              <a href="/hexo-reference.html" rel="next" title="Hexo博客本人使用的一些理解及记录">
+                <i class="fa fa-chevron-left"></i> Hexo博客本人使用的一些理解及记录
               </a>
             
           </div>
@@ -550,10 +636,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/state-pattern.html" rel="prev" title="设计模式之状态模式（十七）">
-                设计模式之状态模式（十七） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -746,7 +828,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模板方法模式的结构"><span class="nav-number">1.</span> <span class="nav-text">模板方法模式的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板方法模式的实现"><span class="nav-number">2.</span> <span class="nav-text">模板方法模式的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见案例及应用场景"><span class="nav-number">3.</span> <span class="nav-text">常见案例及应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：在QQ开放平台创建Bot"><span class="nav-number">1.</span> <span class="nav-text">第一步：在QQ开放平台创建Bot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-登录-QQ-开放平台"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 登录 QQ 开放平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-创建机器人"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 创建机器人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-获取凭证"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 获取凭证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：安装-QQ-Bot-插件"><span class="nav-number">2.</span> <span class="nav-text">第二步：安装 QQ Bot 插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：配置-OpenClaw"><span class="nav-number">3.</span> <span class="nav-text">第三步：配置 OpenClaw</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一：命令行快速配置"><span class="nav-number">3.1.</span> <span class="nav-text">方式一：命令行快速配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二：配置文件"><span class="nav-number">3.2.</span> <span class="nav-text">方式二：配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式三：命令行交互式配置（推荐）"><span class="nav-number">3.4.</span> <span class="nav-text">方式三：命令行交互式配置（推荐）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：验证连接"><span class="nav-number">4.</span> <span class="nav-text">第四步：验证连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>
